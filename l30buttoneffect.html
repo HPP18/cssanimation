@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+    <title>Title</title>
+</head>
+<style type="text/css">
+    body{
+        font-family: sans-serif;
+        background-color: #469d89;
+        height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin: 0;
+        overflow: hidden;
+    }
+    a{
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 28px;
+        color: #fff;
+        letter-spacing: 7px;
+
+        padding: 18px 30px;
+
+        position: relative;
+    }
+    a::before{
+        content: '';
+        width: 50%;
+        height: 100%;
+        background-color: tomato;
+
+        transform: skew(30deg);
+
+        position: absolute;
+        top: -5px;
+        /*left: -5px;*/
+        /*hover ka left so left nae 3, right so right nae 3*/
+        right: 52%;
+
+        z-index: -1;
+
+        transition: all 0.3s;
+    }
+    a::after{
+        content: '';
+        width: 50%;
+        height: 100%;
+        background-color: darkblue;
+
+        transform: skew(30deg);
+
+        position: absolute;
+        top: 5px;
+        left: 50%;
+
+        z-index: -1;
+
+        transition: all 0.3s;
+    }
+    a:hover::before{
+        transform: skew(0deg);
+        top: 0;
+
+        /*left: 0;*/
+        /*background-color: darkblue;*/
+        /*ma ya pr pattern ma tu*/
+
+        /*left: 50%;*/
+
+        right: 0;
+    }
+    a:hover::after{
+        transform: skew(0deg);
+        top: 0;
+
+        left: 0;
+    }
+</style>
+<body>
+    <a href="#">Hover Me</a>
+</body>
+</html>

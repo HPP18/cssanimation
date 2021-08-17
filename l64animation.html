@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+    <title>Ringing Effect</title>
+    <link rel="stylesheet" href="./assets/libs/fontawesomepro/css/all.min.css" type="text/css">
+</head>
+<style type="text/css">
+    body{
+        background-color: #212121;
+        height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin: 0;
+        overflow: hidden;
+    }
+    .ringing{
+        width: 100px;
+        height: 100px;
+        color: #fff;
+        font-size: 48px;
+        background-color: lawngreen;
+        border-radius: 50%;
+
+        line-height: 100px;
+        text-align: center;
+
+        position: relative;
+    }
+    .ringing::before, .ringing::after{
+        content: '';
+        border: 1px solid lawngreen;
+        border-radius: 50%;
+
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        bottom: -20px;
+        right: -20px;
+
+        animation-name: myani;
+        animation-duration: 1.5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+    .ringing::after{
+        animation-delay: 0.5s;
+    }
+    @keyframes myani {
+        0%{
+            opacity: 0;
+            transform: scale(0.5);
+        }
+        50%{
+            opacity: 1;
+            transform: scale(1);
+        }
+        100%{
+            opacity: 0;
+            transform: scale(1.2);
+        }
+    }
+</style>
+<body>
+    <div class="ringing"><i class="fas fa-phone-alt"></i></div>
+</body>
+
+<!--<script src="assets/libs/fontawesomepro/js/all.min.js" type="text/javascript"></script>-->
+</html>
